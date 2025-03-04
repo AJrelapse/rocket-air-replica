@@ -82,13 +82,13 @@ const Content2: React.FC<ScrollFloatProps> = ({
     <>
     <div
       ref={containerRef}
-      className={`w-full min-h-screen flex items-start justify-start bg-white text-black px-10 pt-32 ${aeonikPro.className} ${containerClassName}`}
+      className={`w-full min-h-screen flex items-start justify-start bg-white text-black px-10 pt-64 ${aeonikPro.className} ${containerClassName}`}
     >
       <p className={`text-left text-[clamp(1.6rem,4vw,3rem)] leading-[1.3] ${textClassName}`}>
-        <span className="inline-block">RocketAir is a design and</span> <br />
-        <span className="inline-block">strategy company with an</span> <br />
-        <span className="inline-block">adaptive approach to</span> <br />
-        <span className="inline-block">problem solving.</span>
+        <span className="inline-block">We partner with</span> <br />
+        <span className="inline-block">forward - thinking</span> <br />
+        <span className="inline-block">enterprises and </span> <br />
+        <span className="inline-block">startups</span>
       </p>
 
     </div>

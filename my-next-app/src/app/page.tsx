@@ -6,6 +6,8 @@ import Content1 from '../components/content1';
 import Content2 from '../components/content2';
 import Content3 from '../components/content3';
 import Frame from '../components/Frame';
+import Work from '../components/work';
+
 
 
 
@@ -36,6 +38,7 @@ export default function Home() {
         scrollEnd='bottom bottom-=40%'
         stagger={0.03}
       >  </Content3>
+      <Work />
     </>
   );
 }
