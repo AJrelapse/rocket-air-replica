@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Video from '../components/VideoSection';
 import Content1 from '../components/content1';
 import Content2 from '../components/content2';
+import Content3 from '../components/content3';
 import Frame from '../components/Frame';
 
 
@@ -28,6 +29,13 @@ export default function Home() {
         blurStrength={10}
       >  </Content2>
     <Frame />
+    <Content3
+        animationDuration={1}
+        ease='back.inOut(2)'
+        scrollStart='center bottom+=50%'
+        scrollEnd='bottom bottom-=40%'
+        stagger={0.03}
+      >  </Content3>
     </>
   );
 }

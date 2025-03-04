@@ -19,7 +19,7 @@ interface ScrollFloatProps {
 
 }
 
-const Content1: React.FC<ScrollFloatProps> = ({
+const Content2: React.FC<ScrollFloatProps> = ({
   scrollContainerRef,
   containerClassName = "",
   textClassName = "",
@@ -82,7 +82,7 @@ const Content1: React.FC<ScrollFloatProps> = ({
     <>
     <div
       ref={containerRef}
-      className={`w-full min-h-screen flex items-start justify-start bg-black text-white px-10 pt-36 ${aeonikPro.className} ${containerClassName}`}
+      className={`w-full min-h-screen flex items-start justify-start bg-white text-black px-10 pt-32 ${aeonikPro.className} ${containerClassName}`}
     >
       <p className={`text-left text-[clamp(1.6rem,4vw,3rem)] leading-[1.3] ${textClassName}`}>
         <span className="inline-block">RocketAir is a design and</span> <br />
@@ -97,4 +97,4 @@ const Content1: React.FC<ScrollFloatProps> = ({
   );
 };
 
-export default Content1;
+export default Content2;
