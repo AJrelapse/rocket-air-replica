@@ -5,7 +5,6 @@ import { RiMenu2Line, RiCloseLine } from "react-icons/ri";
 import { motion, AnimatePresence } from "framer-motion";
 import localFont from "next/font/local";
 
-// Load Aeonik Pro & Aeonik Mono
 const aeonikPro = localFont({ src: '../../public/fonts/620e5796f94823392179d875_AeonikPro-Regular.ttf' });
 const aeonikMono = localFont({ src: '../../public/fonts/6232160eeef427e45a261dff_AeonikMono-Regular.ttf' });
 
