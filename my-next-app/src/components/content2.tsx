@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Load Aeonik Pro font
 const aeonikPro = localFont({
   src: "../../public/fonts/620e5796f94823392179d875_AeonikPro-Regular.ttf",
 });
