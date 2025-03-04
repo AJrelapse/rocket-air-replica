@@ -3,8 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { RiMenu2Line, RiCloseLine } from "react-icons/ri";
 import { motion, AnimatePresence } from "framer-motion";
+import localFont from "next/font/local";
 
-const NavbarWithEffects = () => {
+// Load Aeonik Pro & Aeonik Mono
+const aeonikPro = localFont({ src: '../../public/fonts/620e5796f94823392179d875_AeonikPro-Regular.ttf' });
+const aeonikMono = localFont({ src: '../../public/fonts/6232160eeef427e45a261dff_AeonikMono-Regular.ttf' });
+
+const Navbar = () => {
     const [isNavHidden, setIsNavHidden] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -22,7 +27,6 @@ const NavbarWithEffects = () => {
 
     return (
         <div>
-            {/* Navbar */}
             <motion.div
                 initial={{ y: 0 }}
                 animate={{ y: isNavHidden ? "-100%" : "0%" }}
@@ -30,7 +34,6 @@ const NavbarWithEffects = () => {
                 className="fixed top-0 left-0 right-0 bg-black z-50"
             >
                 <div className="flex items-center justify-between px-6 py-4">
-                    {/* Logo */}
                     <div className="w-8 h-8">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
                             <g style={{ mixBlendMode: "difference" }}>
@@ -44,14 +47,11 @@ const NavbarWithEffects = () => {
                         </svg>
                     </div>
 
-                    {/* Right Section (Get in Touch + Menu Toggle) */}
                     <div className="flex items-center space-x-4">
-                        {/* Get in Touch Button */}
-                        <button className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">
+                        <button className={`${aeonikPro.className} bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition`}>
                             Get in Touch
                         </button>
 
-                        {/* Menu Toggle Button */}
                         <button onClick={() => setIsMenuVisible(true)} className="text-white text-2xl">
                             <RiMenu2Line />
                         </button>
@@ -59,7 +59,6 @@ const NavbarWithEffects = () => {
                 </div>
             </motion.div>
 
-            {/* Full-Screen Menu */}
             <AnimatePresence>
                 {isMenuVisible && (
                     <motion.div
@@ -69,20 +68,16 @@ const NavbarWithEffects = () => {
                         transition={{ duration: 0.3, ease: "easeOut" }}
                         className="fixed inset-0 flex bg-black text-white z-50"
                     >
-                        {/* Left Scrollable Content */}
                         <div className="w-1/2 overflow-y-auto p-10 scrollbar-hide">
-                        <img src="/gw_hura_hero_02_m.webp" alt="Background" className="w-full h-auto" />
-                        <p className="mt-4">New Limit</p>
+                            <img src="/gw_hura_hero_02_m.webp" alt="Background" className="w-full h-auto" />
+                            <p className={`${aeonikPro.className} mt-4 text-lg`}>New Limit</p>
                         </div>
 
-                        {/* Right Navigation Section */}
                         <div className="w-1/2 bg-black p-10 relative">
-                            {/* Close Button */}
                             <button onClick={() => setIsMenuVisible(false)} className="absolute top-4 right-4 bg-yellow-400 text-black rounded-full p-2">
                                 <RiCloseLine size={24} />
                             </button>
 
-                            {/* Menu Items */}
                             <ul className="space-y-4 mt-10">
                                 {["Work", "About", "Services", "Verticals", "Careers", "Ideas", "News"].map((item, index) => (
                                     <motion.li
@@ -90,7 +85,7 @@ const NavbarWithEffects = () => {
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="p-4 text-lg cursor-pointer transition-all duration-300 hover:bg-white hover:text-black"
+                                        className={`${aeonikPro.className} p-4 text-lg cursor-pointer transition-all duration-300 hover:bg-white hover:text-black`}
                                     >
                                         {item}
                                     </motion.li>
@@ -104,4 +99,4 @@ const NavbarWithEffects = () => {
     );
 };
 
-export default NavbarWithEffects;
+export default Navbar;

@@ -1,9 +1,12 @@
-// app/page.js
-"use client"; // Add this line
+"use client";
 import Navbar from '../components/Navbar';
+import Header from '../components/Header';
 
 export default function Home() {
   return (
+    <>
     <Navbar />
+    <Header />
+    </>
   );
 }
