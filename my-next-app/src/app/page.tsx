@@ -5,6 +5,7 @@ import Video from '../components/VideoSection';
 import Content1 from '../components/content1';
 import Content2 from '../components/content2';
 import Content3 from '../components/content3';
+import Content4 from '../components/content4';
 import Frame from '../components/Frame';
 import Work from '../components/work';
 
@@ -38,7 +39,17 @@ export default function Home() {
         scrollEnd='bottom bottom-=40%'
         stagger={0.03}
       >  </Content3>
-      <Work />
+      {/* Wrapper to ensure spacing */}
+      <div className="relative w-full">
+        <Work />
+      </div>
+
+      {/* Add margin to Content4 so it comes after Work */}
+      <div className="mt-[300vh]">
+        <Content4 />
+      </div>
+      <Video />
+
     </>
   );
 }
