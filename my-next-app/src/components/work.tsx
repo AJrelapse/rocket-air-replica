@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Load Custom Font
 const aeonikPro = localFont({ src: "../../public/fonts/620e5796f94823392179d875_AeonikPro-Regular.ttf" });
 
 const projects = [
@@ -17,14 +16,12 @@ const Work = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
   
-  // Parallax effect for images
   const translateY1 = useTransform(scrollYProgress, [1, 0], ["0%", "150%"]);
   const translateY2 = useTransform(scrollYProgress, [1, 0], ["0%", "450%"]);
   const translateY3 = useTransform(scrollYProgress, [1, 0], ["0%", "300%"]);
 
   return (
     <section className="relative w-full flex flex-col items-center py-20">
-      {/* Fixed Background Text */}
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
         <h1
           className={`${aeonikPro.className} text-[500px] font-medium text-black leading-none tracking-tight -z-10`}
@@ -35,7 +32,6 @@ const Work = () => {
 
       <div ref={containerRef} className="relative z-10 w-full h-[200vh] grid grid-cols-3 gap-10 px-20">
         {projects.map((project, index) => {
-          // Assign different speeds to different columns
           const translateY = index === 0 ? translateY1 : index === 1 ? translateY2 : translateY3;
 
           return (

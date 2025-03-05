@@ -34,7 +34,6 @@ const Content2: React.FC<ScrollRevealProps> = ({
   const orbitalRef = useRef<HTMLSpanElement>(null);
   const designRef = useRef<HTMLSpanElement>(null);
 
-  // Function to split text into individual letters
   const splitText = (text: string) => {
     return text.split(" ").map((word, index) => (
       <span key={index} className="block">
@@ -92,15 +91,12 @@ const Content2: React.FC<ScrollRevealProps> = ({
 
   return (
     <div className={`w-full min-h-[150vh] bg-black relative ${aeonikPro.className}`}>
-      {/* Heading */}
       <h1 className="absolute text-white font-light text-[36px] ml-[5vw] mt-[5vh]">
         We call it
       </h1>
 
-      {/* Line */}
       <div className="absolute top-[8vh] left-[20vw] w-[74vw] h-[0.3vh] bg-white"></div>
 
-      {/* ORBITAL DESIGN Text */}
       <h2
   className="absolute text-white font-light text-[clamp(350px,12vw,230px)] leading-[0.85] top-[15vh] left-[5vw] w-[92%] tracking-tight flex flex-col"
 >
@@ -108,7 +104,6 @@ const Content2: React.FC<ScrollRevealProps> = ({
   <span ref={designRef} className="inline-block">{splitText("DESIGN")}</span>
 </h2>
 
-{/* Move the button directly under the "L" */}
 <button className="absolute left-[82vw] top-[78vh] cursor-pointer px-6 py-2 border border-white/50 rounded-full text-white font-medium text-[18px] transition duration-200 ease-in-out hover:bg-white hover:text-black">
   Get to know us
 </button>

@@ -8,9 +8,7 @@ import Content3 from '../components/content3';
 import Content4 from '../components/content4';
 import Frame from '../components/Frame';
 import Work from '../components/work';
-
-
-
+import Footer from '../components/footer';
 
 export default function Home() {
   return (
@@ -39,18 +37,14 @@ export default function Home() {
         scrollEnd='bottom bottom-=40%'
         stagger={0.03}
       >  </Content3>
-      {/* Wrapper to ensure spacing */}
       <div className="relative w-full">
         <Work />
       </div>
-
-      {/* Add margin to Content4 so it comes after Work */}
       <div className="mt-[300vh]">
         <Content4 />
       </div>
-      <Video />
+      <Footer />
 
     </>
   );
 }
-

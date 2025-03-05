@@ -6,7 +6,7 @@ const aeonikPro = localFont({ src: '../../public/fonts/620e5796f94823392179d875_
 
 const Content4 = () => {
     const [inView, setInView] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false); // Dynamic color change
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -15,13 +15,12 @@ const Content4 = () => {
                 const { top, height } = ref.current.getBoundingClientRect();
                 const halfPoint = window.innerHeight / 2;
                 
-                // If component's midpoint is above viewport's midpoint → Dark mode
                 setIsDarkMode(top + height / 2 < halfPoint);
             }
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Run once on mount
+        handleScroll();
 
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
