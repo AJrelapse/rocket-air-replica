@@ -1,9 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   output: "standalone", // Optional but helps for deployment
-   experimental: {
-     appDir: true, // Ensure App Router is enabled
+   images: {
+     remotePatterns: [
+       {
+         protocol: "https",
+         hostname: "**",
+       },
+     ],
    },
+   env: {
+     JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
+   },
+   output: "standalone", // Ensures the app runs as a single unit (useful for deployment)
+   experimental: {
+   },
+   reactStrictMode: true, // Helps catch issues early
  };
  
  module.exports = nextConfig;

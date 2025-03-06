@@ -34,3 +34,4 @@ prisma/migrations/
 
 # Next.js Specific
 .vercel/
+.vercel

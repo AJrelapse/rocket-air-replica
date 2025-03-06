@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { RiMenu2Line, RiCloseLine } from "react-icons/ri";
 import { motion, AnimatePresence } from "framer-motion";
 import localFont from "next/font/local";
+import Image from "next/image";
 
 const aeonikPro = localFont({ src: '../../public/fonts/620e5796f94823392179d875_AeonikPro-Regular.ttf' });
 
@@ -12,16 +13,16 @@ const Navbar = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         const currentScrollY = window.scrollY;
         setIsNavHidden(currentScrollY > lastScrollY);
         setLastScrollY(currentScrollY);
-    };
+    }, [lastScrollY]);
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+    }, [handleScroll]);
 
     return (
         <div>
@@ -67,7 +68,13 @@ const Navbar = () => {
                         className="fixed inset-0 flex bg-black text-white z-50"
                     >
                         <div className="w-1/2 overflow-y-auto p-10 scrollbar-hide">
-                            <img src="/gw_hura_hero_02_m.webp" alt="Background" className="w-full h-auto" />
+                            <Image 
+                                src="/gw_hura_hero_02_m.webp" 
+                                alt="Background" 
+                                width={500} 
+                                height={300} 
+                                layout="intrinsic"
+                            />
                             <p className={`${aeonikPro.className} mt-4 text-lg`}>New Limit</p>
                         </div>
 
