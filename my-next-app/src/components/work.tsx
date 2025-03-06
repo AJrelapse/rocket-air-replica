@@ -15,7 +15,7 @@ const projects = [
 const Work = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
-  
+
   const translateY1 = useTransform(scrollYProgress, [1, 0], ["0%", "150%"]);
   const translateY2 = useTransform(scrollYProgress, [1, 0], ["0%", "450%"]);
   const translateY3 = useTransform(scrollYProgress, [1, 0], ["0%", "300%"]);
@@ -24,13 +24,16 @@ const Work = () => {
     <section className="relative w-full flex flex-col items-center py-20">
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
         <h1
-          className={`${aeonikPro.className} text-[500px] font-medium text-black leading-none tracking-tight -z-10`}
+          className={`${aeonikPro.className} text-[clamp(100px,20vw,700px)] font-medium text-black leading-none tracking-tight -z-10`}
         >
           WORK
         </h1>
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full h-[200vh] grid grid-cols-3 gap-10 px-20">
+      <div
+        ref={containerRef}
+        className="relative z-10 w-full h-[200vh] grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-0 px-6 sm:px-12 lg:px-20"
+      >
         {projects.map((project, index) => {
           const translateY = index === 0 ? translateY1 : index === 1 ? translateY2 : translateY3;
 
@@ -38,8 +41,8 @@ const Work = () => {
             <motion.div
               key={index}
               style={{ y: translateY }}
-              className="relative w-full h-[70vh] overflow-hidden"
-            >
+              className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] max-h-[500px] overflow-hidden"
+              >
               <Image
                 src={project.image}
                 alt={project.title}

@@ -31,20 +31,20 @@ const Header = () => {
     });
 
     return (
-        <div ref={ref} className="bg-black text-white h-[70vh] flex flex-col justify-center items-center">
-            <div className="relative flex items-center justify-between w-[90%]">
+        <div ref={ref} className="bg-black text-white h-[70vh] flex flex-col justify-center items-center px-4 md:px-0">
+            <div className="relative flex flex-col md:flex-row items-center justify-between w-full md:w-[90%] text-center md:text-left">
                 <animated.div 
                     style={fadeInLeft} 
-                    className={`${aeonikPro.className} text-[5rem] font-medium leading-[1] text-left pb-10`}
+                    className={`${aeonikPro.className} text-4xl md:text-[5rem] font-medium leading-[1] pb-10`}
                 >
                     <span>Digital <br /> <span className="inline-block align-middle">experiences</span></span>
                 </animated.div>
 
-                <div className="absolute left-[35%] top-[calc(50%+30px)] w-[50%] h-[2px] bg-white"></div>
+                <div className="hidden md:block absolute left-[35%] top-[calc(50%+30px)] w-[50%] h-[2px] bg-white"></div>
 
                 <animated.div 
                     style={fadeInRight} 
-                    className={`${aeonikPro.className} text-[5rem] font-medium leading-[1] text-right pt-32`}
+                    className={`${aeonikPro.className} text-4xl md:text-[5rem] font-medium leading-[1] pt-10 md:pt-32 md:text-right`}
                 >
                     <span><span className="inline-block align-middle">that</span> <br /> Win by Design</span>
                 </animated.div>

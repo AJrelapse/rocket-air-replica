@@ -26,7 +26,6 @@ export default function Home() {
     <Content2
         baseOpacity={0}
         enableBlur={true}
-        baseRotation={5}
         blurStrength={10}
       >  </Content2>
     <Frame />

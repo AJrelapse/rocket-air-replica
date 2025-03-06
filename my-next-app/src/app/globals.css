@@ -10,3 +10,12 @@
 .scrollbar-hide {
   scrollbar-width: none;
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}

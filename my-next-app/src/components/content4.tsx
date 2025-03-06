@@ -54,19 +54,19 @@ const Content4 = () => {
                 isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
             }`}
         >
-            <div className="relative flex items-center justify-between w-[90%]">
+            <div className="relative flex flex-col md:flex-row items-center justify-between w-full md:w-[90%] text-center md:text-left">
                 <animated.div 
                     style={fadeInLeft} 
-                    className={`${aeonikPro.className} text-[5rem] font-medium leading-[1] text-left pb-10`}
+                    className={`${aeonikPro.className} text-4xl md:text-[5rem] font-medium leading-[1] pb-10`}
                 >
                     <span>Take a look <br /> <span className="inline-block align-middle">at what</span></span>
                 </animated.div>
 
-                <div className="absolute left-[21.5%] top-[calc(50%+30px)] w-[58%] h-[2px] bg-current"></div>
+                <div className="hidden md:block absolute left-[25%] top-[calc(50%+30px)] w-[50%] h-[2px] bg-current"></div>
 
                 <animated.div 
                     style={fadeInRight} 
-                    className={`${aeonikPro.className} text-[5rem] font-medium leading-[1] text-right pt-32`}
+                    className={`${aeonikPro.className} text-4xl md:text-[5rem] font-medium leading-[1] pt-10 md:pt-32 md:text-right`}
                 >
                     <span><span className="inline-block align-middle">we can</span> <br />do for you</span>
                 </animated.div>
