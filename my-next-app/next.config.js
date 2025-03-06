@@ -1,15 +1,10 @@
 /** @type {import('next').NextConfig} */
-
-module.exports = {
-   images: {
-      remotePatterns: [
-         {
-            protocol: 'https',
-            hostname: '**',
-         },
-      ],
+const nextConfig = {
+   output: "standalone", // Optional but helps for deployment
+   experimental: {
+     appDir: true, // Ensure App Router is enabled
    },
-   env: {
-      JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
-    },
-}
+ };
+ 
+ module.exports = nextConfig;
+ 
